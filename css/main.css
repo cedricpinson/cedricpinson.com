@@ -15,6 +15,13 @@ body {
     height: 100vh;
 }
 
+/* container for update page */
+.update-container {
+    display: block;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
 .left {
     flex-grow: 1;
     width: 50%;
@@ -117,11 +124,11 @@ h1 .lastname {
     fill: #FFFFFF;
 }
 
-.sketchfab {
+.link-bio {
     color: #1CAAD9;
     text-decoration: none;
 }
-.sketchfab:hover {
+.link-bio:hover {
     text-decoration: underline;
 }
 
@@ -150,6 +157,15 @@ h1 .lastname {
 
 /* tablet other size */
 @media (max-width: 1100px) {
+
+    /* updates page */
+    .update-container {
+        width: 100%;
+        padding: 0;
+        padding-top: 10px;
+    }
+
+    /* main page */
     .container {
         display: block;
     }
@@ -165,9 +181,10 @@ h1 .lastname {
         width: 100%;
     }
 
-    .right section {
+    /* not used
+     .right section {
         padding: 0 40px;
-    }
+    } */
 
     #header {
         padding: 0 10%;

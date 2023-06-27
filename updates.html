@@ -22,49 +22,10 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="left"></div>
-        <div class="right">
-
+    <div class="update-container">
             <section id="header">
                 <header>
                     <h1>Cedric <span class="lastname">Pinson</span></h1>
-                    <div class="tagline">A French developer and entrepreneur living in Paris, France.</div>
-
-                    <p>Amongst other things, I am a Zangief player, handstand enthousiast and a beginner piano player. I
-                        still
-                        <a class="link-bio" href="updates.html">experiment a bit on the side</a> with some tech like WebGPU.</p>
-                </header>
-
-                <article class="bio">
-                    <h2>EpicGame</h2>
-                    <p>Director Of Engineering, working on <a class="link-bio" href="https://www.fab.com/">Fab</a> the succession of Sketchfab.</p>
-                    <h2>Sketchfab</h2>
-                    <p>I'm the co-founder and CTO of <a class="link-bio" href="https://sketchfab.com">Sketchfab</a>, a
-                        platform
-                        for publishing and sharing 3D content. We started this project in 2011, then known as Showwebgl.
-                        Our
-                        innovative approach was quickly embraced by
-                        the 3D community and eventually morphed into Sketchfab before we were aquired by Epic Games in
-                        2021.</p>
-
-                    <h2>Freelance</h2>
-                    <p>
-                        I did some OpenGL freelance work around 2009 with Stupeflix, Pok3D, osgEarth, before I started
-                        experimenting with WebGL and did demo for Firefox and Ultranoir.</p>
-
-                    <h2>Game developer</h2>
-                    <p>
-                        I worked in small video game studios at Nemosoft in 2001 then Mekensleep in 2004.</p>
-
-                    <h2>Asm68k</h2>
-                    <p>
-                        I come from a time where we had to buy 512kb extension to make a demo run fast. We spent night
-                        coding on
-                        asmone and swaped disks through snailmail.</p>
-                </article>
-
-                <footer>
                     <ul class="links">
                         <li>
                             <a class="social" href="https://mastodon.gamedev.place/@trigrou" title="Mastodon"
@@ -106,9 +67,24 @@
                             </a>
                         </li>
                     </ul>
-                </footer>
+
+                <br>
+                <div class="tagline">Last updates </div>
+
+                </header>
+
+                <article class="bio">
+                    <h2>2022 - WebGPU indirect draw and indirect dispatch</h2>
+                    <br>
+                    <video width="100%" controls>
+                        <source src="https://cedricpinson.github.io/webgpu-quadtree-compute-shader/demo.mp4" type="video/mp4">
+                    </video>
+                    <p>This is a small experiment with WebGPU using GPU driven rendering basically compute shader define what will be displayed on the screen. Beware the implementation is very naive. Try <a class="link-bio" href="https://cedricpinson.github.io/webgpu-quadtree-compute-shader/">demo</a> with WebGPU compatible browser and <a class="link-bio" href='https://github.com/cedricpinson/webgpu-quadtree-compute-shader'>check the repository</a>
+                    </p>
+
+                </article>
+
             </section>
-        </div>
     </div>
 </body>
 
