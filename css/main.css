@@ -25,7 +25,7 @@ body {
 .left {
     flex-grow: 1;
     width: 50%;
-    background: url(img/me.jpg) no-repeat center center;
+    background: url(/img/me.jpg) no-repeat center center;
     background-size: cover;
     -webkit-filter: grayscale(100%);
 }
