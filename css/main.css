@@ -12,7 +12,8 @@ body {
 
 .container {
     display: flex;
-    height: 100vh;
+    /* height: 100vh; */
+    overflow: hidden;
 }
 
 /* container for update page */
@@ -34,8 +35,10 @@ body {
     background: #151619;
     flex-grow: 1;
     width: 50%;
+    height: 100vh;
+    overflow-y: auto;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
 }
 
