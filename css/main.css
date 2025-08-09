@@ -1,3 +1,6 @@
+/* ================================
+   GLOBAL STYLES
+   ================================ */
 * {
     margin: 0;
     padding: 0;
@@ -10,53 +13,9 @@ body {
     background: #151619;
 }
 
-.container {
-    display: flex;
-    /* height: 100vh; */
-    overflow: hidden;
-}
-
-/* container for update page */
-.update-container {
-    display: block;
-    padding-left: 20%;
-    padding-right: 20%;
-}
-
-.left {
-    flex-grow: 1;
-    width: 50%;
-    background: url(/img/me.jpg) no-repeat center center;
-    background-size: cover;
-    -webkit-filter: grayscale(100%);
-}
-
-.right {
-    background: #151619;
-    flex-grow: 1;
-    width: 50%;
-    height: 100vh;
-    overflow-y: auto;
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-}
-
-#header {
-    background: #151619;
-    display: block;
-    align-items: center;
-    justify-content: center;
-    padding: 0 5%;
-}
-
-header p {
-    padding-top: 10px;
-    font-size: 18px;
-    font-style: italic;
-    font-weight: 100;
-}
-
+/* ================================
+   SHARED TYPOGRAPHY
+   ================================ */
 h1 {
     font-weight: 700;
     font-size: 60px;
@@ -74,6 +33,25 @@ h1 .lastname {
     left: -5px;
 }
 
+h4 {
+    margin-top: 1em;
+    font-weight: 500;
+}
+
+/* ================================
+   SHARED COMPONENTS
+   ================================ */
+
+/* Header section (shared between both pages) */
+#header {
+    background: #151619;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+}
+
+/* Tagline (only used in bio page) */
 .tagline {
     font-weight: 300;
     font-size: 22px;
@@ -81,45 +59,17 @@ h1 .lastname {
     color: #FFFFFF;
 }
 
-h4 {
-    margin-top: 1em;
-    font-weight: 500;
+/* Links styling */
+.link-shared {
+    color: #1CAAD9;
+    text-decoration: none;
 }
 
-.bio h2 {
-    font-weight: 500;
-    font-size: 22px;
-    letter-spacing: 0;
-    margin-top: 20px;
+.link-shared:hover {
+    text-decoration: underline;
 }
 
-.bio {
-    font-weight: 100;
-    font-size: 20px;
-    color: #D9D9D9;
-    letter-spacing: 0;
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-.bio p {
-    margin-top: 10px;
-}
-
-.bio ul {
-    margin-top: 10px;
-    margin-left: 20px;
-    padding-left: 0;
-}
-
-.bio li {
-    margin-top: 5px;
-}
-
-.link {
-    list-style: none;
-}
-
+/* Social media icons */
 .links li {
     display: inline-block;
 }
@@ -142,19 +92,145 @@ h4 {
     fill: #FFFFFF;
 }
 
-.link-bio {
-    color: #1CAAD9;
-    text-decoration: none;
+/* ================================
+   BIO PAGE STYLES (index.html)
+   ================================ */
+
+/* Bio page layout */
+.bio-container {
+    display: flex;
+    overflow: hidden;
 }
 
-.link-bio:hover {
-    text-decoration: underline;
+.bio-left {
+    flex-grow: 1;
+    width: 50%;
+    background: url(/img/me.jpg) no-repeat center center;
+    background-size: cover;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
-/* tablet side */
+.bio-right {
+    background: #151619;
+    flex-grow: 1;
+    width: 50%;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Bio page header content */
+.bio-header p {
+    padding-top: 10px;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 100;
+}
+
+/* Bio sections */
+.bio-section {
+    font-weight: 100;
+    font-size: 20px;
+    color: #D9D9D9;
+    letter-spacing: 0;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.bio-section h2 {
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0;
+    margin-top: 20px;
+}
+
+.bio-section p {
+    margin-top: 10px;
+}
+
+.bio-section ul {
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.bio-section li {
+    margin-top: 5px;
+}
+
+/* ================================
+   ARTICLES PAGE STYLES (updates.html)
+   ================================ */
+
+/* Articles page layout */
+.articles-container {
+    display: block;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Article content */
+.article {
+    font-weight: 100;
+    font-size: 20px;
+    color: #D9D9D9;
+    letter-spacing: 0;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.article h2 {
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 0;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.article h4 {
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.article p {
+    margin-top: 10px;
+    line-height: 1.3;
+}
+
+.article ul {
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.article li {
+    margin-top: 8px;
+    line-height: 1.2;
+}
+
+.article img {
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.article video {
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+/* Tablet landscape */
 @media (max-width: 1200px) and (max-height:850px) {
-
-    header p {
+    .bio-header p {
         padding-top: 10px;
         font-size: 15px;
     }
@@ -174,34 +250,35 @@ h4 {
     }
 }
 
-/* tablet other size */
+/* Mobile and tablet portrait */
 @media (max-width: 1100px) {
 
-    /* updates page */
-    .update-container {
-        width: 100%;
-        padding: 0;
-        padding-top: 10px;
+    /* Articles page responsive */
+    .articles-container {
+        margin-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
-    /* main page */
-    .container {
+    /* Bio page responsive */
+    .bio-container {
         display: block;
     }
 
-    .left {
+    .bio-left {
         width: 100%;
         height: calc(100% - 20rem);
         margin-bottom: 10px;
         background-position: top;
     }
 
-    .right {
+    .bio-right {
         width: 100%;
     }
 
     #header {
-        padding: 0 10%;
+        /* padding: 0 10%; */
+        padding: 0 20px;
     }
 
     h1 {
@@ -214,13 +291,13 @@ h4 {
         left: -1px;
     }
 
-    .bio h2 {
+    .bio-section h2 {
         font-size: 20px;
     }
 
     .tagline,
-    .bio {
+    .bio-section,
+    .article {
         font-size: 18px;
     }
-
 }
