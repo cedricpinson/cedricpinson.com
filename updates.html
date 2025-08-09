@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Cedric Pinson</title>
-    <meta name="description" content="Cedric Pinson - developer and entrepreneur">
+    <meta name="description" content="Cedric Pinson - Updates & experiments">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,200,300,400,700" rel="stylesheet">
@@ -23,7 +23,7 @@
 
 <body>
     <div class="articles-container">
-        <section id="header">
+        <section>
             <header>
                 <h1>Cedric <span class="lastname">Pinson</span></h1>
                 <ul class="links">
@@ -66,75 +66,109 @@
                         </a>
                     </li>
                 </ul>
-
-                <br>
             </header>
 
             <article class="article" id="morning-nerds">
-                <h2>2025 - Reading news like grandpa in 2025</h2>
-                <p>I started to experiment with a small project called Morning Nerds using a ReMarkable device for
-                    reading news.
-                    The goal was to escape the noise of social media and create a peaceful way to consume tech news and
-                    updates.</p>
+                <h2>2025 - Reading the News Grandpa-Style in 2025</h2>
+                <p>I recently started experimenting with a small project called "Morning Nerds" using a ReMarkable
+                    device for reading news. But why take this approach?</p>
 
-                <br>
                 <img width="100%" src="updates/morning-nerds/cover.avif"
-                    alt="Morning nerds - Reading news offline with ReMarkable device" />
-                <br>
+                    alt="Picture of remarkable device with newspaper in pdf" />
 
-                <h4>Social Media and the noise</h4>
-                <p>I used to check news (tech, world, local news) on Mastodon and Bluesky. I mainly use Mastodon but I
-                    follow some other users on bluesky. It's convenient to have all in Mastodon but there is also a lot
-                    of mixed content and too much noise to get the data I want.</p>
+                <h4>The Problem with Social Media Noise</h4>
+                <p>I used to check news (tech, world, and local) on Mastodon and Bluesky. While I primarily use
+                    Mastodon, I follow some users on Bluesky as well. Although it's convenient to have everything
+                    centralized in Mastodon, there's simply too much mixed content and noise to efficiently get the
+                    information I actually want and let's not talk about ads pollution 😊.</p>
 
-                <p>So I started to prototype with a new tech call RSS, yes RSS is pretty old but still doing the job and
-                    is better than other social media. I removed all news I could access with RSS feeds and keep only
-                    people I am interested in. The result is a pdf I generate daily(ish) from rss feeds with summaries.
-                    It's really nice, and peaceful to read, especially when you go outside in a park or a coffee shop.
-                    Also it changed how I interact with social media, I don't go as often as before.</p>
+                <p>This led me to experiment with an old but reliable technology: RSS. Yes, RSS is quite dated, but it
+                    still does the job effectively and arguably better than social media for news consumption. I
+                    migrated all the news sources I could access via RSS feeds and kept only the people I'm genuinely
+                    interested in following on social platforms.</p>
 
-                <h4>How it works</h4>
-                <p>The setup is straightforward, I have a config file with RSS feeds. Everyday I generate a PDF file
-                    with the following steps:</p>
+                <p>The result is a daily PDF that I generate from RSS feeds, complete with summaries. It's incredibly
+                    peaceful to read, especially when I'm outside in a park or at a coffee shop. This approach has also
+                    changed how I interact with social media meaning I visit these platforms much less frequently than
+                    before.
+                </p>
 
+                <p> I experimented with converting the newsfeed into a podcast format for listening during walks, but it
+                    quickly became clear this approach doesn't work for curated news consumption or at least for me.
+
+                    The fundamental issue is selectivity. When reading, I can easily scan headlines and skip entire
+                    sections that don't interest me, moving effortlessly from a graphics programming update to a climate
+                    tech story while completely bypassing cryptocurrency news. But with audio, you're locked into a
+                    linear experience. Skipping content while walking means fumbling with playback controls, breaking
+                    your stride, and often missing the transition to something actually relevant.
+
+                    This reinforced why the visual, text-based format works so well for this type of content
+                    consumption. Reading allows for the kind of selective attention that makes curated news feeds truly
+                    valuable.
+                </p>
+
+                <h4>How It Works</h4>
+                <p>The setup is straightforward. I maintain a configuration file containing RSS feeds, and each day I
+                    generate a PDF through these steps:</p>
                 <ul>
-                    <li>fetch new articles</li>
-                    <li>Create a summary with a llm</li>
-                    <li>Add a few image to illustrate if I find an image in the article</li>
-                    <li>And build the PDF with a template</li>
+                    <li><strong>Fetch new articles</strong> from RSS feeds</li>
+                    <li><strong>Create summaries</strong> using an LLM (Large Language Model) to create a summary of the
+                        article</li>
+                    <li><strong>Add illustrative images</strong> when I find relevant images in the article</li>
+                    <li><strong>Build the PDF</strong> using all articles summarized</li>
                 </ul>
 
-                <p>Why PDF format?</p>
-                <p>On reader device epub format works but it looks like the subset of html/css is not that easy for all
-                    reader devices and some devices clearly cut some features. So to generate a nice layout like having
-                    2 columns I need to use PDF.</p>
+                <h4>What's the current tech stack ?</h4>
+                <p>The tech stack is mixed of nodejs/typescript and installed tools:</p>
+                <ul>
+                    <li>nodejs / typescript</li>
+                    <li><a class="link-shared" href="https://pandoc.org/">pandoc</a> to convert markdown to PDF</li>
+                    <li>template from <a class="link-shared"
+                            href="https://github.com/Wandmalfarbe/pandoc-latex-template">Wandmalfarbe</a>
+                    </li>
+                </ul>
 
-                <h4>What's next</h4>
-                <p>I would like to add content from social media for people I am following but filtered. Right now I am
-                    following mainly Graphics Programming developers, but even in this community people express themself
-                    (and dont stop we are humans) but for technical news I want to extract only tech informations from
-                    cats, politics, boats (you pictures are great btw :) )</p>
+                <h4>Why PDF format?</h4>
+                <p>While EPUB format works on reader devices, the subset of HTML/CSS support varies significantly across
+                    devices, and some clearly limit certain features. To generate a nice layout with features like
+                    two-column formatting, PDF is the most reliable option.</p>
 
-                <p>My current system works only to get an idea of what's going on, it does not give full details. For
-                    full details I still need to be on the computer click on links in the PDF. Ideally I would like to
-                    mark things on the ReMarkable so I could have this list on my computer… but right now, the
-                    Remarkable API is too limited. I would love to automatize this part but maybe when there will be a
-                    richer API on the device.</p>
+                <h4>What's Next</h4>
+                <p>I'd like to add filtered content from social media for the people I follow. Currently, I mainly
+                    follow graphics programming developers, and while I appreciate that this community expresses
+                    themselves as humans (please don't stop!), when I'm looking for technical news, I want to extract
+                    only the technical information, filtering out cats, politics, boats, and other personal content
+                    (though boats and cats pictures are great, by the way! 😊).</p>
+
+                <p>My current system works well for getting an overview of what's happening, but it doesn't provide full
+                    details. For complete information, I still need to use my computer and click on links in the PDF.
+                    But it's a huge win to get a full overview before clicking on everything to read the content.
+                    Ideally, I'd like to mark items on the ReMarkable so I could have a reading list on my computer.
+                    However, the ReMarkable API is currently too limited for this functionality. I'd love to automate
+                    this process, but I'll probably have to wait for a richer API.</p>
+
+                <p>The overall experience is good, but the code is still in a messy state and I will need to clean it up
+                    before publishing or opening the service to others.</p>
 
                 <h4>Conclusion</h4>
-                <p>I don't know if I am the only one annoyed by the waste of time growing to get valuable content on the
-                    web, but when I was prototyping this tool I felt insane the amount of garbage we need to eat to get
-                    the real content. I understand now when my grandpa was reading the newspaper outside with his coffe,
-                    it's a really peaceful routine.</p>
+                <p>I'm not sure if I'm the only one frustrated by the growing amount of time wasted trying to find
+                    valuable content on the web. While prototyping this tool, I was struck by the incredible amount of
+                    noise we have to filter through to get to the actual content we want.</p>
+
+                <p>If you have recommendations for existing tools or ideas that might be interesting for this project,
+                    please don't hesitate to reach out. I'm far from being an expert in this area, I simply trying to
+                    avoid wasting time while getting the information I want.</p>
+
+                <p>I am not sponsored by ReMarkable but the device is great, I would like better API to access device
+                    with REST api to implement
+                    better workflow with web tech.</p>
+
+                <p>I now understand why my grandfather enjoyed reading the newspaper outside with his coffee. It's a
+                    truly peaceful routine.</p>
             </article>
 
             <article class="article" id="webgpu-quadtree">
                 <h2>2022 - WebGPU indirect draw and indirect dispatch</h2>
-                <br>
-                <video width="100%" poster=updates/webgpu-quadtree-compute-shader/cover.jpg controls>
-                    <source src="updates/webgpu-quadtree-compute-shader/demo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
                 <p>This is a small experiment with WebGPU using GPU driven rendering approach (basically the compute
                     shader define what will be displayed on the screen). The implementation is very naive, also I did
                     not have time to dig some bugs when you move position UI element too fast :) . <a
@@ -143,6 +177,10 @@
                     WebGPU compatible browser and <a class="link-shared"
                         href='https://github.com/cedricpinson/webgpu-quadtree-compute-shader'>the repository</a>.
                 </p>
+                <video width="100%" poster=updates/webgpu-quadtree-compute-shader/cover.jpg controls>
+                    <source src="updates/webgpu-quadtree-compute-shader/demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </article>
 
         </section>
