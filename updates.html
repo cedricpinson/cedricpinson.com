@@ -39,10 +39,12 @@
                         </a>
                     </li>
                     <li>
-                        <a class="social" href="https://twitter.com/trigrou" title="Twitter" target="_blank">
-                            <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                        <a class="social" href="https://bsky.app/profile/trigrou.bsky.social" title="Bluesky"
+                            target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path
-                                    d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z" />
+                                    d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4 .4 6.7 .9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3 61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3 .5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9 120.3 124.6 164.8-26.7 187.7-103.4 22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4 .4 6.7 .9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7 5.9-19.9 15-138.9 15-155.5s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8-66.1 46.6-137.1 141.1-163.2 191.8z" />
                             </svg>
                         </a>
                     </li>
@@ -66,9 +68,65 @@
                 </ul>
 
                 <br>
-                <div class="tagline">Last updates </div>
-
             </header>
+
+            <article class="bio" id="morning-nerds">
+                <h2>2025 - Reading news like grandpa in 2025</h2>
+                <p>I started to experiment with a small project called Morning Nerds using a ReMarkable device for
+                    reading news.
+                    The goal was to escape the noise of social media and create a peaceful way to consume tech news and
+                    updates.</p>
+
+                <br>
+                <img width="100%" src="updates/morning-nerds/cover.avif"
+                    alt="Morning nerds - Reading news offline with ReMarkable device" />
+                <br>
+
+                <h4>Social Media and the noise</h4>
+                <p>I used to check news (tech, world, local news) on Mastodon and Bluesky. I mainly use Mastodon but I
+                    follow some other users on bluesky. It's convenient to have all in Mastodon but there is also a lot
+                    of mixed content and too much noise to get the data I want.</p>
+
+                <p>So I started to prototype with a new tech call RSS, yes RSS is pretty old but still doing the job and
+                    is better than other social media. I removed all news I can access with RSS feeds and keep only
+                    people I am interested in. The result is a pdf I generate daily(ish) from rss feeds with summaries.
+                    It's really nice, and peaceful to read, especially when you go outside in a park or a coffee shop.
+                    Also it changed how I interact with social media, I don't go as often as before.</p>
+
+                <h4>How it works</h4>
+                <p>The setup is straightforward, I have a config file with RSS feeds. Everyday I generate a PDF file
+                    with the following steps:</p>
+
+                <ul>
+                    <li>fetch new articles</li>
+                    <li>Create a summary with a llm</li>
+                    <li>Add a few image to illustrate if I find an image in the article</li>
+                    <li>And build the PDF with a template</li>
+                </ul>
+
+                <p>Why PDF format?</p>
+                <p>On reader device epub format works but it looks like the subset of html/css is not that easy for all
+                    reader devices and some devices clearly cut some features. So to generate a nice layout like having
+                    2 columns I need to use PDF.</p>
+
+                <h4>What's next</h4>
+                <p>I would like to add content from social media for people I am following but filtered. Right now I am
+                    following mainly Graphics Programming developers, but even in this community people express themself
+                    (and dont stop we are humans) but for technical news I want to extract only tech informations from
+                    cats, politics, boats (you pictures are great btw :) )</p>
+
+                <p>My current system works only to get an idea of what's going on, it does not give full details. For
+                    full details I still need to be on the computer click on links in the PDF. Ideally I would like to
+                    mark things on the ReMarkable so I could have this list on my computer… but right now, the
+                    Remarkable API is too limited. I would love to automatize this part but maybe when there will be a
+                    richer API on the device.</p>
+
+                <h4>Conclusion</h4>
+                <p>I don't know if I am the only one annoyed by the waste of time growing to get valuable content on the
+                    web, but when I was prototyping this tool I felt insane the amount of garbage we need to eat to get
+                    the real content. I understand now when my grandpa was reading the newspaper outside with his coffe,
+                    it's a really peaceful routine.</p>
+            </article>
 
             <article class="bio" id="webgpu-quadtree">
                 <h2>2022 - WebGPU indirect draw and indirect dispatch</h2>
